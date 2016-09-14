@@ -7,7 +7,9 @@ jQuery.fn.preventDoubleSubmission = function() {
       e.preventDefault();
     } else {
       // Mark it so that the next submit can be ignored
-      $form.data('submitted', true);
+      if($form.valid()) {
+        $form.data('submitted', true);
+      }
     }
   });
 
